@@ -1,0 +1,279 @@
+Iteration 1
+        Subsample 0
+                Energy: -103.13097681415886
+                Subspace dimension: 196
+        Subsample 1
+                Energy: -103.13097681415886
+                Subspace dimension: 196
+        Subsample 2
+                Energy: -103.13097681415886
+                Subspace dimension: 196
+        Subsample 3
+                Energy: -103.13097681415886
+                Subspace dimension: 196
+        Subsample 4
+                Energy: -103.13097681415886
+                Subspace dimension: 196
+        Subsample 5
+                Energy: -103.13097681415886
+                Subspace dimension: 196
+        Subsample 6
+                Energy: -103.13097681415886
+                Subspace dimension: 196
+        Subsample 7
+                Energy: -103.13097681415886
+                Subspace dimension: 196
+        Subsample 8
+                Energy: -103.13097681415886
+                Subspace dimension: 196
+        Subsample 9
+                Energy: -103.13097681415886
+                Subspace dimension: 196
+Iteration 2
+        Subsample 0
+                Energy: -109.00367357848508
+                Subspace dimension: 2679769
+        Subsample 1
+                Energy: -109.0114475810195
+                Subspace dimension: 2798929
+        Subsample 2
+                Energy: -108.29064221633618
+                Subspace dimension: 2812329
+        Subsample 3
+                Energy: -108.9928636537872
+                Subspace dimension: 2772225
+        Subsample 4
+                Energy: -109.00342475337513
+                Subspace dimension: 2822400
+        Subsample 5
+                Energy: -108.29100153615136
+                Subspace dimension: 2808976
+        Subsample 6
+                Energy: -108.98072232051337
+                Subspace dimension: 2647129
+        Subsample 7
+                Energy: -108.30638717145908
+                Subspace dimension: 2666689
+        Subsample 8
+                Energy: -108.22575918996989
+                Subspace dimension: 2719201
+        Subsample 9
+                Energy: -109.01760569867677
+                Subspace dimension: 2782224
+Iteration 3
+        Subsample 0
+                Energy: -109.2281802064698
+                Subspace dimension: 2822400
+        Subsample 1
+                Energy: -109.21568467453773
+                Subspace dimension: 2975625
+        Subsample 2
+                Energy: -109.22076999447826
+                Subspace dimension: 2917264
+        Subsample 3
+                Energy: -109.22096348619796
+                Subspace dimension: 2965284
+        Subsample 4
+                Energy: -109.22398623580645
+                Subspace dimension: 2941225
+        Subsample 5
+                Energy: -109.22166692810421
+                Subspace dimension: 2825761
+        Subsample 6
+                Energy: -109.21935527257695
+                Subspace dimension: 2965284
+        Subsample 7
+                Energy: -109.21272291422437
+                Subspace dimension: 2873025
+        Subsample 8
+                Energy: -109.21448509759401
+                Subspace dimension: 2958400
+        Subsample 9
+                Energy: -109.22471068160374
+                Subspace dimension: 2927521
+Iteration 4
+        Subsample 0
+                Energy: -109.24125392651972
+                Subspace dimension: 4076361
+        Subsample 1
+                Energy: -109.23766613807214
+                Subspace dimension: 4080400
+        Subsample 2
+                Energy: -109.24019033874865
+                Subspace dimension: 4116841
+        Subsample 3
+                Energy: -109.23896788940812
+                Subspace dimension: 4239481
+        Subsample 4
+                Energy: -109.2403568700723
+                Subspace dimension: 4120900
+        Subsample 5
+                Energy: -109.24286213926221
+                Subspace dimension: 3869089
+        Subsample 6
+                Energy: -109.23857138438984
+                Subspace dimension: 4012009
+        Subsample 7
+                Energy: -109.23736951734612
+                Subspace dimension: 4004001
+        Subsample 8
+                Energy: -109.240559936631
+                Subspace dimension: 4096576
+        Subsample 9
+                Energy: -109.23865750935504
+                Subspace dimension: 4056196
+Iteration 5
+        Subsample 0
+                Energy: -109.24862138516393
+                Subspace dimension: 5013121
+        Subsample 1
+                Energy: -109.25268316260846
+                Subspace dimension: 5234944
+        Subsample 2
+                Energy: -109.24875056065193
+                Subspace dimension: 5094049
+        Subsample 3
+                Energy: -109.25072875397358
+                Subspace dimension: 5193841
+        Subsample 4
+                Energy: -109.24924036217067
+                Subspace dimension: 5253264
+        Subsample 5
+                Energy: -109.24837844462962
+                Subspace dimension: 5076009
+        Subsample 6
+                Energy: -109.24915588389447
+                Subspace dimension: 5107600
+        Subsample 7
+                Energy: -109.25020510587079
+                Subspace dimension: 5193841
+        Subsample 8
+                Energy: -109.25157160032295
+                Subspace dimension: 5026564
+        Subsample 9
+                Energy: -109.25081564952043
+                Subspace dimension: 5253264
+Iteration 6
+        Subsample 0
+                Energy: -109.25650432151835
+                Subspace dimension: 6260004
+        Subsample 1
+                Energy: -109.25578527460644
+                Subspace dimension: 6436369
+        Subsample 2
+                Energy: -109.25637221647611
+                Subspace dimension: 5992704
+        Subsample 3
+                Energy: -109.25716966476232
+                Subspace dimension: 6220036
+        Subsample 4
+                Energy: -109.25770023029796
+                Subspace dimension: 6543364
+        Subsample 5
+                Energy: -109.25524004900211
+                Subspace dimension: 6265009
+        Subsample 6
+                Energy: -109.2576358718255
+                Subspace dimension: 6270016
+        Subsample 7
+                Energy: -109.25711232687611
+                Subspace dimension: 6405961
+        Subsample 8
+                Energy: -109.25587389357268
+                Subspace dimension: 6230016
+        Subsample 9
+                Energy: -109.25668379064288
+                Subspace dimension: 6230016
+Iteration 7
+        Subsample 0
+                Energy: -109.26016522690593
+                Subspace dimension: 7219969
+        Subsample 1
+                Energy: -109.26165943713669
+                Subspace dimension: 7177041
+        Subsample 2
+                Energy: -109.26138876404082
+                Subspace dimension: 6969600
+        Subsample 3
+                Energy: -109.26053143339284
+                Subspace dimension: 7112889
+        Subsample 4
+                Energy: -109.26151504546337
+                Subspace dimension: 7241481
+        Subsample 5
+                Energy: -109.26171985374589
+                Subspace dimension: 7033104
+        Subsample 6
+                Energy: -109.26051975986074
+                Subspace dimension: 7193124
+        Subsample 7
+                Energy: -109.26139072421434
+                Subspace dimension: 7150276
+        Subsample 8
+                Energy: -109.26116286273557
+                Subspace dimension: 7230721
+        Subsample 9
+                Energy: -109.25938404481361
+                Subspace dimension: 7241481
+Iteration 8
+        Subsample 0
+                Energy: -109.26293246249331
+                Subspace dimension: 8031556
+        Subsample 1
+                Energy: -109.26329369887641
+                Subspace dimension: 7789681
+        Subsample 2
+                Energy: -109.26296516802608
+                Subspace dimension: 7969329
+        Subsample 3
+                Energy: -109.26404469679821
+                Subspace dimension: 7795264
+        Subsample 4
+                Energy: -109.2639136217623
+                Subspace dimension: 7958041
+        Subsample 5
+                Energy: -109.2636132372647
+                Subspace dimension: 7952400
+        Subsample 6
+                Energy: -109.26416980624205
+                Subspace dimension: 8008900
+        Subsample 7
+                Energy: -109.26429848386071
+                Subspace dimension: 7873636
+        Subsample 8
+                Energy: -109.26420180739154
+                Subspace dimension: 7974976
+        Subsample 9
+                Energy: -109.26456352298179
+                Subspace dimension: 7800849
+Iteration 9
+        Subsample 0
+                Energy: -109.26723108534003
+                Subspace dimension: 8520561
+        Subsample 1
+                Energy: -109.26559786144708
+                Subspace dimension: 8386816
+        Subsample 2
+                Energy: -109.26567223736345
+                Subspace dimension: 8684809
+        Subsample 3
+                Energy: -109.26669478417489
+                Subspace dimension: 8561476
+        Subsample 4
+                Energy: -109.26575469535899
+                Subspace dimension: 8602489
+        Subsample 5
+                Energy: -109.26728758848834
+                Subspace dimension: 8579041
+        Subsample 6
+                Energy: -109.26573934095175
+                Subspace dimension: 8637721
+        Subsample 7
+                Energy: -109.26613072775498
+                Subspace dimension: 8415801
+        Subsample 8
+                Energy: -109.26645594882852
+                Subspace dimension: 8579041
+        Subsample 9
+                Energy: -109.26608213648448
+                Subspace dimension: 8168164
