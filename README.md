@@ -2,6 +2,8 @@
 
 This repo serves as a container for everything done during my master's thesis specialization project.
 
+Data produced with this repo is found in the `data` folder, which contains `.csv` files.
+
 In this repository you will find python scripts which contain:
 - Using quantum computing to solve the electronic structure problem in quantum chemistry.
 - Simulations of the Local Unitary Cluster Jastrow ansatz on a quantum circuit by utilizing the `ffsim` library and `qiskit`.
