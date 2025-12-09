@@ -14,16 +14,22 @@ In this repository you will find python scripts which contain:
 This repository contains scripts and usage of my development library `fqcsim` (see https://github.com/davidomanovic/fqcsim) for different experiments quantum computing applications. 
 
 # Examples
-### **Binding curve for Nitrogen in STO-6G for different ansätze:**
-<img width="601" height="387" alt="image" src="https://github.com/user-attachments/assets/1445b622-2f80-4d44-9eb6-bcc56defb7d7" />
+## **Born-Oppenheimer Dissociation curves for molecules using quantum circuit ansatzë and different quantum chemistry methods**
 
-### **Convergence of different optimizer during VQE:**
-<img width="712" height="570" alt="image" src="https://github.com/user-attachments/assets/8ec20973-124a-4ce0-ba9a-79eb961c61b9" />
+### Hydrogen H2 CAS(2e,10o) in the cc-pVDZ basis (20 qubits):
+<img width="507" height="667" alt="image" src="https://github.com/user-attachments/assets/ec368d4d-f3c0-41b1-8183-650fcc3f27f8" />
 
-### **Tensor Network Matrix Product State simulations:**
-<img width="543" height="332" alt="image" src="https://github.com/user-attachments/assets/9edf8c70-d9a8-4f37-a09b-e09eb3e83c7d" />
+### Ethene C2H4 CAS(4e,4o) pi-bonding picture (8 qubits):
+<img width="482" height="441" alt="image" src="https://github.com/user-attachments/assets/449c9fe2-d18a-4f5d-b2e8-7bb580856832" />
 
-### **Sample Based Quantum Diagonalization algorithm on actual Quantum Hardware:**
-<img width="617" height="357" alt="image" src="https://github.com/user-attachments/assets/a92ba20e-b552-46b0-ac5a-8ca476d943a6" />
+### Nitrogen N2 CAS(10e,10o) in the STO-6G basis (20 qubits):
+<img width="536" height="598" alt="image" src="https://github.com/user-attachments/assets/9ac704e2-d69a-4675-bc92-287ce36f75af" />
+
+### Nitrogen N2 CAS(10e,26o) in the cc-pVDZ basis (52 qubits) Tensor-Network simulations:
+<img width="780" height="632" alt="image" src="https://github.com/user-attachments/assets/7128a077-a930-438a-a9c1-3314b161e35c" />
+
+## **Convergence of different optimizers on VQE:**
+<img width="981" height="623" alt="image" src="https://github.com/user-attachments/assets/ded390b0-32e6-4af8-9a9c-1ed04c88390e" />
+
 
 
