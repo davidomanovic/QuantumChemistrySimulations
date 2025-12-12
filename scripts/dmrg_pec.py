@@ -1,40 +1,72 @@
-# dmrg_n2_ccpvdz_pec.py
-import os, csv, numpy as np
-from pyscf import gto, scf, lib, dmrgscf
-from pyscf.mcscf import avas
+import os, csv
+from pyscf import gto, scf, mcscf, dmrgscf, lib, mp, symm
+import numpy as np
+from pyscf.mcscf import addons
+from collections import Counter
 
+# block2
+SCRATCH = os.path.abspath(f"/tmp/{os.environ.get('USER','user')}/block2")
+os.makedirs(SCRATCH, exist_ok=True)
+lib.param.TMPDIR = SCRATCH
 dmrgscf.settings.BLOCKEXE = os.popen("which block2main").read().strip()
-dmrgscf.settings.MPIPREFIX = ''
+dmrgscf.settings.MPIPREFIX = ""
 
-M = 8 #max bond dim
+def set_dmrg(dmrg, M, rundir):
+    dmrg.maxM = M
+    dmrg.scheduleSweeps = [5,10,20]
+    dmrg.scheduleMaxMs  = [M,M,M]
+    dmrg.scheduleTols   = [1e-9, 1e-10, 1e-12]
+    dmrg.scheduleNoises = [1e-7, 1e-8, 1e-9]
+    dmrg.tol = 1e-12
+    dmrg.conv_tol=1e-12
+    dmrg.runtimeDir = rundir
+    dmrg.scratchDirectory = rundir
+    dmrg.outputFile = os.path.join(rundir, "dmrg.out")
 
-R_vals = np.round(np.arange(0.9, 2.5, 0.1), 2)
-out_csv = f"N2_ccpvdz_DMRGSCF_PEC_M={M}.csv"
+def energy(x):
+    """Helper to extract energy from fcisolver"""
+    return float(x if isinstance(x, (int, float)) else x[0])
+
+basis = "cc-pvtz"
+
+start, stop, step = 0.7, 3.0, 0.05
+R_vals = np.linspace(start, stop, num=round((stop - start) / step) + 1)
+M = 1024 # max bond dim
+atom = lambda R: f"N 0 0 0; N {R} 0.0 0.0"
+
+out_csv = f"output/DMRG/N2_{basis}_bd={M}.csv"
 with open(out_csv, "w", newline="") as f:
-    csv.writer(f).writerow(["R", "E_RHF", "E_DMRGSCF"])
+    csv.writer(f).writerow(["R", "E"]) 
 
 for R in R_vals:
-    mol = gto.M(atom=f"N 0 0 0; N 0 0 {R}",basis="cc-pvdz",symmetry="Dooh",
-                spin=0,verbose=1,max_memory=16000)
+    mol = gto.M(atom(R), basis=basis, symmetry=True, verbose=4)
     mf = scf.RHF(mol).run()
+    nmo = mf.mo_coeff.shape[1]
+    ncore = 2
+    ncas = nmo - ncore
+    nelec = mol.nelectron - 2*ncore
+    mc = mcscf.CASCI(mf,ncas,nelec)
+    mc.frozen = ncore
+    occ = mf.mo_occ
+    core_idx = np.argsort(mf.mo_energy)[:ncore] # pick the 2 core MOs by energy (keeps degenerate pairs intact)
+    orb_irreps = symm.label_orb_symm(mol, mol.irrep_name, mol.symm_orb, mf.mo_coeff)  # list of irrep names per MO
 
-    ncas, nelecas, cas_orbs = avas.avas(mf, ["N 2s", "N 2p"]) 
-    nelecas = int(nelecas)
+    # count how many active orbitals per irrep (exclude the 2 cores)
+    active_mask = np.ones(len(orb_irreps), dtype=bool)
+    active_mask[core_idx] = False
+    irrep_counts = Counter([orb_irreps[i] for i in range(len(orb_irreps)) if active_mask[i]])  # sums to 26
+    irrep_norb = dict(irrep_counts)
+    mo_sorted = addons.sort_mo_by_irrep(mcscf.CASCI(mf, ncas, nelec),mf.mo_coeff,irrep_norb)
 
-    mc = dmrgscf.DMRGSCF(mf, ncas, nelecas)
-    mc.fcisolver.maxM = M
-    mc.fcisolver.threads = int(os.environ.get("OMP_NUM_THREADS", "8"))
-    mc.fcisolver.memory = int(mol.max_memory / 1000)  
-    mc.fcisolver.runtimeDir = lib.param.TMPDIR
-    mc.fcisolver.scratchDirectory = lib.param.TMPDIR
-    mc.conv_tol = 1e-8
-    mc.max_cycle_macro = 50
-    mc.natorb = True
-    mc.canonicalization = True
-
-    e_casscf = mc.kernel(cas_orbs)[0]
-
+    # DMRGCI (FCI reference)
+    mc.fcisolver = dmrgscf.DMRGCI(mol)
+    mc.fcisolver.threads = 48
+    mc.fcisolver.memory = 198
+    rundir = os.path.join(SCRATCH, f"n2_R{R:.2f}_R{R}")
+    os.makedirs(rundir, exist_ok=True)
+    set_dmrg(mc.fcisolver, M, rundir)
+    E = energy(mc.kernel(mo_sorted))
     with open(out_csv, "a", newline="") as f:
-        csv.writer(f).writerow([R, mf.e_tot, e_casscf])
+        csv.writer(f).writerow([R, E])     
 
 print(f"Saved: {out_csv}")
